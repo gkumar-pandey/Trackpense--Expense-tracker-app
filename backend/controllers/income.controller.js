@@ -88,6 +88,12 @@ const updateIncomeHandler = async (req, res) => {
   }
 };
 
+/**
+ * @route DELETE /api/v1/incomes/:incomeId
+ * @description delete a income 
+ * @param {Object} req Express request object contains income id in params. 
+ * @param {Object} res Express response object sends either error or success message.
+ */
 const deleteIncomeHandler = async (req, res) => {
   try {
     const { incomeId } = req.params;
