@@ -2,6 +2,9 @@ const mongoose = require("mongoose");
 
 const expenseSchema = new mongoose.Schema(
   {
+    pay_to: {
+      type: String,
+    },
     amount: {
       type: Number,
       required: true,
