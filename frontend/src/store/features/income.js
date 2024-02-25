@@ -11,19 +11,17 @@ const initialState = {
   },
 };
 
- 
-
-const API = "http://localhost:5000/api/v1/incomes";
+const API = "https://trackpense-expense-tracker-app.vercel.app/api/v1/";
 
 export const fetchIncomes = createAsyncThunk("fetchIncomes", async () => {
-  const res = await axios.get(API);
+  const res = await axios.get(`${API}incomes`);
   return res.data;
 });
 
 export const addNewIncome = createAsyncThunk(
   "addNewIncome",
   async (incomeData) => {
-    const res = await axios.post(API, incomeData);
+    const res = await axios.post(`${API}incomes`, incomeData);
     return res.data;
   }
 );
@@ -35,9 +33,9 @@ const incomeSlice = createSlice({
     handleSort: (state, action) => {
       state.filter.sortBy = action.payload;
     },
-    handleFilter:(state,action)=>{
+    handleFilter: (state, action) => {
       state.filter.category = action.payload;
-    }
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchIncomes.pending, (state, action) => {
@@ -66,5 +64,5 @@ const incomeSlice = createSlice({
 });
 
 const incomeReducer = incomeSlice.reducer;
-export const { handleSort,handleFilter } = incomeSlice.actions;
+export const { handleSort, handleFilter } = incomeSlice.actions;
 export default incomeReducer;

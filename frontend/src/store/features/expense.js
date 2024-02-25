@@ -11,17 +11,17 @@ const initialState = {
   },
 };
 
-const API = "http://localhost:5000/api/v1/expenses";
+const API = "https://trackpense-expense-tracker-app.vercel.app/api/v1/";
 
 export const fetchExpenses = createAsyncThunk("fetchExpenses", async () => {
-  const res = await axios.get(API);
+  const res = await axios.get(`${API}expenses`);
   return res.data;
 });
 
 export const addNewExpense = createAsyncThunk(
   "addNewExpense",
   async (expenseData) => {
-    const res = await axios.post(API, expenseData);
+    const res = await axios.post(`${API}expenses`, expenseData);
     console.log(res);
     return res.data;
   }
