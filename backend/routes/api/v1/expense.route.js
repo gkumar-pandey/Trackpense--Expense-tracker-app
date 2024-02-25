@@ -6,7 +6,7 @@ const expenseRoutes = express.Router()
 expenseRoutes.get("/",readAllExpensesHandler);
 
 // POST /api/v1/expenses - create a expense.
-expenseRoutes.post("/expenses",createExpenseHandler)
+expenseRoutes.post("/",createExpenseHandler)
 
 module.exports = expenseRoutes;
 

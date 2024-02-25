@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
 const savingSchema = new mongoose.Schema(
   {
+    source: {
+      type: String,
+    },
     amount: {
       type: Number,
       default: 0,
