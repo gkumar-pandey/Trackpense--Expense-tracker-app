@@ -1,0 +1,14 @@
+:root {
+  --prmary-color: #060d12;
+  --secondary-color: #2587e4;
+  --grey: #9ebaf0;
+  --white: #eef0f1;
+  --purple-gradient: #3321FB-#8514F5;
+  --primary-bg-color: #181818;
+  --secondary-bg-color: #3A3B47;
+  --prmary-btn-bg-color:#00D4FE;
+}
+
+.primary-btn {
+  background-color: var(--prmary-btn-bg-color);
+}
